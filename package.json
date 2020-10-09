@@ -1,9 +1,13 @@
 {
-  "name": "week4",
-  "version": "0.0.0",
+  "name": "comp229-fall20-week3",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node ./server.js"
+  },
+  "engines": {
+    "node": "12.00.0",
+    "npm": "6.0.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
@@ -16,5 +20,18 @@
     "jquery": "^3.5.1",
     "morgan": "~1.9.1",
     "popper.js": "^1.16.1"
-  }
+  },
+  "description": "��#\u0000 \u0000C\u0000O\u0000M\u0000P\u00002\u00002\u00009\u0000-\u0000F\u0000a\u0000l\u0000l\u00002\u00000\u0000-\u0000W\u0000e\u0000e\u0000k\u00003\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ysf1472/COMP229-Fall20-Week3.git"
+  },
+  "author": "Yusuf Hekimoglu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ysf1472/COMP229-Fall20-Week3/issues"
+  },
+  "homepage": "https://github.com/ysf1472/COMP229-Fall20-Week3#readme"
 }
