@@ -1,0 +1,81 @@
+<!-- Main content-->
+<!-- created :Yusuf Hekimoglu Student#: 301081665  Date 2020-10-09 -->
+
+<main class="container"><div class="jumbotron">
+    <h1 class="display-4">Welcome to the <%= title %> page</h1>
+    </div>
+    <% if  (title == "Home") { %>
+    <h3 class="display-5">Mission Statement</h3>  <hr />
+    <p>The porpuse of the site is enchance the developers skills such as javascript, html, and css also
+        learning new skills including  proper using node.js, express, heruko, and mandoDB. During the semester
+       developer will have better understandig of creating websites. </p>  <hr />
+    <% } else if (title == "About")   { %>
+        <h3 class="display-5">Yusuf Ahmet Nihat Hekimoglu</h3>
+        <hr />
+        <img src="/Assets/images/WIN_20201009_16_29_05_Pro.jpg"  alt="Picture of myself" height="150" width="200" />
+        <hr />
+        <p >  My name is Yusuf Ahmet Nihat Hekimoglu. I am 20 years old and I am from Turkey. 
+            I have been studying software engineering over a year at centennial college.
+            I have been living in Toronto more than two years. I mostly interested in java and SQl developer languages. 
+            I have to study two more years to graduate from college; however, I
+            looking for part time job in my field.</p>
+            <hr />
+            <a href="/Assets/New Resume.docx">For resume</a><hr />
+            <a href="https://www.linkedin.com/in/yusuf-hekimoglu-0814751a3/">For more linkedin profile </a>
+            <hr />
+    <% } else if (title == "Products")  { %>
+        <h3 class="display-5">Projects</h3><hr />
+        <ol><li><h4 class="display-5">CalGo</h4></li>
+            <img src="/Assets/images/cal.jpg" alt="CalGO" height="130" width="280" />
+        <p>It basicly calulate your calories while the user do exercises with smart watch.
+            I had that idea so my time and I worked for the make the idea feasible...</p>
+            <li><h4 class="display-5">CoMoneyManege</h4></li>
+            <img src="/Assets/images/Money.jpg" alt="CoMoneyManege" height="130" width="280"/>
+        <p>It is mobile app which the users can create common income and expences so that they can
+            see who much money they spent on any items. I am the team leader of the project. My colleagues and 
+            I are working on the requrment models right now...</p>
+            <li><h4 class="display-5">RandomQuestions</h4></li>
+            
+            <img src="/Assets/images/question.jpg" alt="RandomQuestions" height="130" width="280"/>
+            <p>It is a java basid project and it's porpuse is that getting random questions from array and according to 
+                aswer which the user enter encourage them to do better with comments. I am the programmer in that project. it will 
+                finih in few weeks...</p></ol>
+            <hr /> <hr /> <hr /> <hr />
+
+     <% } else if (title == "Services")  { %>
+        <h3 class="display-5">Services</h3>  <hr />
+        <ul><li>Data analysis </li> 
+           <li>Java programming </li>
+            <li>Cooking </li>
+            <li>General development</li>
+            <li>Tutorial</li>
+            <li>Gym Coach </li>
+            </ul>
+            
+            <hr />
+
+     <% } else if (title == "Contact")  { %>
+        <h3 class="display-5">Contact</h3>
+        <hr /><p><em> Gmail:</em> ysf1472hmt@gmail.com <br/> <em>Phone#</em> +16477729022 </p> <hr />
+         <a href="https://www.linkedin.com/in/yusuf-hekimoglu-0814751a3/"> linkedin account</a> <hr />
+         <h4 class="display-5">For extras please email us</h4>
+            <fieldset mailto:ysf1472hmt@gmail.com class="text">
+                <label for="Fname">First Name</label>
+                <input type="text" id="Fname" />
+                <p id="FnameError" class="errorMsg"></p>
+                <label for="Lname">Last Name</label>
+                <input type="text" id="Lname" />
+                <p id="LnameError" class="errorMsg"></p>
+                <label for="number">Phone Number</label>
+                <input type="text" id="number" />
+                <p id="number" class="errorMsg"></p>
+                <label for="email">Email Address</label>
+                <input type="email" id="emailbox" />
+                <p id="emailError" class="errorMsg"></p>
+            </fieldset>
+            
+           <a href="http://localhost:3000/home"> <input type="submit" id="nextBtn" value="submit;" />
+           </a></form>
+     <% } %>
+
+</main>

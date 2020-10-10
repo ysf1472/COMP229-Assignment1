@@ -8,3 +8,4 @@ console.log("App started...");
     window.addEventListener("load",start);
 
 })();
+document.getElementById("nextBtn").addEventListener("click", check, false);

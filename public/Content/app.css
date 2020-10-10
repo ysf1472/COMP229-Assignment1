@@ -1,1 +1,10 @@
 /* custom css goes here*/
+img.align-left {
+    float: left;
+    margin-right: 10px;
+}
+
+img.medium{
+    height: 150px;
+     width: 200px; 
+}
