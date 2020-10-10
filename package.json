@@ -7,8 +7,8 @@
     "start": "node ./server.js"
   },
   "engines": {
-    "node": "12.18.3",
-    "npm": "6.0.0"
+    "node": "^12.18.3",
+    "npm": "^6.0.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
@@ -23,7 +23,7 @@
     "popper.js": "^1.16.1"
   },
   "description": "��#\u0000 \u0000C\u0000O\u0000M\u0000P\u00002\u00002\u00009\u0000-\u0000F\u0000a\u0000l\u0000l\u00002\u00000\u0000-\u0000W\u0000e\u0000e\u0000k\u00003\u0000\r\u0000 \u0000",
-  "main": "index.js",
+  "main": "server.js",
   "devDependencies": {},
   "repository": {
     "type": "git",
