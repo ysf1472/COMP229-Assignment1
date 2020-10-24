@@ -1,3 +1,4 @@
+// created :Yusuf Hekimoglu Student#: 301081665  Date 2020-10-23 -->
 let express = require('express');
 let router = express.Router();
 let mongoosee= require(`mongoose`);
@@ -59,7 +60,7 @@ module.exports.processLoginPage = (req, res, next)=>
                 return next(err);
 
             }
-            return res.redirect(`/book-list`);
+            return res.redirect(`/`);
         });
     })(req, res, next);
 }
@@ -109,7 +110,7 @@ module.exports.processRegisterPage = (req, res, next)=>{
             // redirect the user and authenticate them
             return passport.authenticate(`local`)(req, res, ()=>
             {
-                res.redirect(`/book-list`)
+                res.redirect(`/`)
             });
         }
     });

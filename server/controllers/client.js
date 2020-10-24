@@ -2,43 +2,60 @@
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
+const client = require('../models/client');
 
 // create a reference to the model
-let Book = require('../models/book');
+let Client = require('../models/client');
 
-module.exports.displayBookList = (req, res, next) => {
-    Book.find((err, bookList) => {
+// module.exports.ClientList = (req, res, next) => {
+//     Client.find({})
+//       .sort("username")
+//       .exec(function (
+//         err,
+//         ClientList // Sorts alphabetically
+//       ) {
+//         if (err) {
+//         } else {
+//           res.render("client/list", {
+//             title: "Client List",
+//             ClientList: clientList,
+//             displayName: req.user ? req.user.displayName : "",
+//           });
+//         }
+//       });
+//   };
+
+module.exports.displayClientList = (req, res, next) => {
+    Client.find((err, clientList) => {
         if(err)
         {
             return console.error(err);
         }
         else
         {
-            //console.log(BookList);
+            
 
-            res.render('book/list',
-             {title: 'Books',
-              BookList: bookList,
+            res.render('client/list',
+             {title: 'clients',
+             ClientList: clientList,
                displayName: req.user ? req.user.displayName : ``});      
         }
     });
 }
 
 module.exports.displayAddPage = (req, res, next) => {
-    res.render('book/add', {title: 'Add Book',
+    res.render('client/add', {title: 'Add Contact',
     displayName: req.user ? req.user.displayName : ``})          
 }
 
 module.exports.processAddPage = (req, res, next) => {
-    let newBook = Book({
+    let newClient = Client({
         "name": req.body.name,
-        "author": req.body.author,
-        "published": req.body.published,
-        "description": req.body.description,
-        "price": req.body.price
+        "phone": req.body.phone,
+        "email": req.body.email
     });
 
-    Book.create(newBook, (err, Book) =>{
+    Client.create(newClient, (err, Client) =>{
         if(err)
         {
             console.log(err);
@@ -46,8 +63,8 @@ module.exports.processAddPage = (req, res, next) => {
         }
         else
         {
-            // refresh the book list
-            res.redirect('/book-list');
+            // refresh the Client list
+            res.redirect('/client-list');
         }
     });
 
@@ -56,7 +73,7 @@ module.exports.processAddPage = (req, res, next) => {
 module.exports.displayEditPage = (req, res, next) => {
     let id = req.params.id;
 
-    Book.findById(id, (err, bookToEdit) => {
+    Client.findById(id, (err, clientToEdit) => {
         if(err)
         {
             console.log(err);
@@ -65,7 +82,7 @@ module.exports.displayEditPage = (req, res, next) => {
         else
         {
             //show the edit view
-            res.render('book/edit', {title: 'Edit Book', book: bookToEdit,
+            res.render('client/edit', {title: 'Edit Client', client: clientToEdit,
             displayName: req.user ? req.user.displayName : ``})
         }
     });
@@ -74,16 +91,14 @@ module.exports.displayEditPage = (req, res, next) => {
 module.exports.processEditPage = (req, res, next) => {
     let id = req.params.id
 
-    let updatedBook = Book({
+    let updatedClient = Client({
         "_id": id,
         "name": req.body.name,
-        "author": req.body.author,
-        "published": req.body.published,
-        "description": req.body.description,
-        "price": req.body.price
+        "phone": req.body.phone,
+        "email": req.body.email
     });
 
-    Book.updateOne({_id: id}, updatedBook, (err) => {
+    client.updateOne({_id: id}, updatedClient, (err) => {
         if(err)
         {
             console.log(err);
@@ -91,8 +106,8 @@ module.exports.processEditPage = (req, res, next) => {
         }
         else
         {
-            // refresh the book list
-            res.redirect('/book-list');
+            // refresh the Client list
+            res.redirect('/client-list');
         }
     });
 }
@@ -100,7 +115,7 @@ module.exports.processEditPage = (req, res, next) => {
 module.exports.performDelete = (req, res, next) => {
     let id = req.params.id;
 
-    Book.remove({_id: id}, (err) => {
+    Client.remove({_id: id}, (err) => {
         if(err)
         {
             console.log(err);
@@ -108,8 +123,8 @@ module.exports.performDelete = (req, res, next) => {
         }
         else
         {
-             // refresh the book list
-             res.redirect('/book-list');
+             // refresh the Client list
+             res.redirect('/client-list');
         }
     });
 }

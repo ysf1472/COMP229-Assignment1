@@ -1,4 +1,4 @@
-// created :Yusuf Hekimoglu Student#: 301081665  Date 2020-10-09 -->
+// created :Yusuf Hekimoglu Student#: 301081665  Date 2020-10-23 -->
 let createError = require('http-errors');
 let express = require('express');
 let path = require('path');
@@ -26,6 +26,7 @@ mongoDB.once('open', ()=>{
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
 let booksRouter= require(`../routes/book`);
+let clientsRouter = require(`../routes/client`);
 
 let app = express();
 // view engine setup
@@ -69,7 +70,9 @@ passport.deserializeUser(User.deserializeUser());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use(`/book-list`,booksRouter)
+app.use(`/book-list`,booksRouter);
+app.use(`/client-list`,clientsRouter);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
